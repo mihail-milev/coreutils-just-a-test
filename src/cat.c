@@ -577,6 +577,13 @@ main (int argc, char **argv)
 
   /* Parse command line options.  */
 
+#ifdef THIS_IS_NO_SET
+  char* some_dummy_array[30];
+  free(some_dummy_array);
+#endif
+  char* another_dummy_array[20];
+  free(another_dummy_array);
+
   int c;
   while ((c = getopt_long (argc, argv, "benstuvAET", long_options, nullptr))
          != -1)
